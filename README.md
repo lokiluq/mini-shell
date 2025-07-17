@@ -1,4 +1,3 @@
-# mini-shell
 
 # 🐚 Minishell
 
@@ -6,6 +5,11 @@ A simplified custom shell implementation built in C.
 This project recreates essential features of a Unix shell such as command parsing, execution, redirection, piping, and signal handling — all from scratch.
 
 ---
+
+## How to run it
+- Using make will build the executable and run it.
+- To run it again without remaking, you can simply run the executable with ./minishell.
+
 
 ## ✅ Features
 
