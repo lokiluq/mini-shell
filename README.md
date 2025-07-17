@@ -1,6 +1,7 @@
 # mini-shell
 
 ✅ Features
+
 🖥️ Prompt & Execution
 Interactive Prompt: Displays a shell prompt while waiting for user input.
 
