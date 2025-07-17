@@ -49,19 +49,7 @@ This project recreates essential features of a Unix shell such as command parsin
 - `env`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Displays environment variables.  
 - `exit`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Exits the shell.
 
-### 🚫 Special Character Handling
-- Unclosed quotes or non-essential special characters (e.g. `\`, `;`) are **not** interpreted.
 
----
 
-## 🧠 Purpose
-
-This project is a deep dive into how Unix shells work under the hood. It strengthens your grasp of:
-- Process control (`fork`, `execve`, `wait`)
-- File descriptors and redirection
-- Signal handling
-- Parsing logic and command execution flow
-
----
 
 
