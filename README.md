@@ -7,8 +7,8 @@ This project recreates essential features of a Unix shell such as command parsin
 ---
 
 ## How to run it
-- Using 'make' will build the executable and run it.
-- To run it again without remaking, you can simply run the executable with ./minishell.
+- Using `make` will build the executable and run it.
+- To run it again without remaking, you can simply run the executable with `./minishell`.
 
 
 ## ✅ Features
@@ -20,7 +20,7 @@ This project recreates essential features of a Unix shell such as command parsin
 - **Single Global Variable**: Uses only one global variable throughout the program.
 
 ### 📝 Command History
-- **History Support**: Maintains a working history of executed commands.
+-  Maintains a working history of executed commands.
 
 ### 🔠 Quoting Rules
 - **Single Quotes `'`**: Preserve literal value of characters (no interpretation).
