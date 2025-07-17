@@ -1,62 +1,67 @@
 # mini-shell
 
-✅ Features
+# 🐚 Minishell
 
-🖥️ Prompt & Execution
-Interactive Prompt: Displays a shell prompt while waiting for user input.
+A simplified custom shell implementation built in C.  
+This project recreates essential features of a Unix shell such as command parsing, execution, redirection, piping, and signal handling — all from scratch.
 
-Command Execution: Parses and executes built-in and external commands.
+---
 
-PATH Resolution: Searches executables using PATH or direct paths.
+## ✅ Features
 
-Single Global Variable: Uses only one global variable throughout the program.
+### 🖥️ Prompt & Execution
+- **Interactive Prompt**: Displays a shell prompt while waiting for user input.
+- **Command Execution**: Parses and executes built-in and external commands.
+- **PATH Resolution**: Searches executables using `PATH` or direct paths.
+- **Single Global Variable**: Uses only one global variable throughout the program.
 
-📝 Command History
-History Support: Maintains a working history of executed commands.
+### 📝 Command History
+- **History Support**: Maintains a working history of executed commands.
 
-🔠 Quoting Rules
-Single Quotes ': Preserve literal value of characters (no interpretation).
+### 🔠 Quoting Rules
+- **Single Quotes `'`**: Preserve literal value of characters (no interpretation).
+- **Double Quotes `"`**: Preserve literal value, except for `$` (used for variable expansion).
 
-Double Quotes ": Preserve literal value, except for $ (used for variable expansion).
+### 🔁 Redirections
+- `<`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Redirects input from a file.  
+- `>`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Redirects output to a file (overwrite).  
+- `>>`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Redirects output in append mode.  
+- `<<`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Here-document — reads input until a delimiter is encountered.
 
-🔁 Redirections
-<   : Redirects input from a file.
+### 🔗 Pipes
+- **Pipelines**: Connects multiple commands using `|`, where the output of one becomes the input of the next.
 
->   : Redirects output to a file (overwrite).
+### 🌍 Environment Variables
+- **Expansion with `$`**: Expands environment variables.
+- **Exit Status `$?`**: Represents the exit status of the last executed pipeline.
 
->>  : Redirects output in append mode.
+### 🚦 Signal Handling
+- `Ctrl + C`&nbsp;&nbsp;&nbsp;&nbsp;: Interrupts current input and shows a fresh prompt.  
+- `Ctrl + D`&nbsp;&nbsp;&nbsp;&nbsp;: Exits the shell.  
+- `Ctrl + \`&nbsp;&nbsp;&nbsp;&nbsp;: Ignored (no action taken).
 
-<<  : "Here-document" — reads input until a delimiter line is encountered.
+### 🛠 Built-in Commands
+- `echo [-n]`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Prints text to standard output.  
+- `cd [dir]`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Changes current working directory.  
+- `pwd`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Prints current working directory.  
+- `export [VAR=VAL]`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Adds or modifies environment variables.  
+- `unset [VAR]`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Removes environment variables.  
+- `env`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Displays environment variables.  
+- `exit`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Exits the shell.
 
-🔗 Pipes
-Supports pipelines (|), passing the output of one command as input to the next.
+### 🚫 Special Character Handling
+- Unclosed quotes or non-essential special characters (e.g. `\`, `;`) are **not** interpreted.
 
-🌍 Environment Variables
-Expands environment variables using $.
+---
 
-Special variable $? holds the exit status of the last executed pipeline.
+## 🧠 Purpose
 
-🚦 Signal Handling
-Ctrl+C : Interrupts current input and displays a new prompt.
+This project is a deep dive into how Unix shells work under the hood. It strengthens your grasp of:
+- Process control (`fork`, `execve`, `wait`)
+- File descriptors and redirection
+- Signal handling
+- Parsing logic and command execution flow
 
-Ctrl+D : Exits the shell.
+---
 
-Ctrl+\ : Ignored (no action).
 
-🛠 Built-in Commands
-echo [-n]    : Prints text to standard output.
-
-cd [dir]     : Changes the current working directory.
-
-pwd       : Prints the current working directory.
-
-export [VAR=VAL]: Adds or modifies environment variables.
-
-unset [VAR]  : Removes environment variables.
-
-env       : Displays the current environment.
-
-exit       : Exits the shell.
-
-🚫 Special Character Handling
-Does not interpret unclosed quotes or non-essential characters like \ or ;.
